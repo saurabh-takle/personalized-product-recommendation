@@ -14,8 +14,8 @@ df.drop_duplicates(inplace=True)
 df = df[['UserId', 'ProductId', 'Score']]
 df.columns = ['user_id', 'item_id', 'rating']
 
-df['user_id'] = df['user_id'].astype(str)
-df['item_id'] = df['item_id'].astype(str)
+df['user_id'] = df['user_id'].astype('category').cat.codes
+df['item_id'] = df['item_id'].astype('category').cat.codes
 df['rating'] = df['rating'].astype(float)
 
 # Keep users with at least 50 reviews
