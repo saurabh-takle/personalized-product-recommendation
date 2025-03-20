@@ -50,7 +50,7 @@ function App() {
     setError("");
     try {
       const response = await axios.get(
-        `http://127.0.0.1:5000/recommend?user_id=${userId}`
+        `https://personalized-product-recommendation.onrender.com/recommend?user_id=${userId}`
       );
       setRecommendations(response.data.recommendations || []);
       setError("");
@@ -147,47 +147,6 @@ function App() {
         </ul>
       </Container>
     </ThemeProvider>
-
-    // <Container style={{ textAlign: "center", marginTop: "50px" }}>
-    //   <Typography variant="h4" gutterBottom>
-    //     Product Recommendation System
-    //   </Typography>
-
-    //   <TextField
-    //     label="Enter User ID"
-    //     variant="outlined"
-    //     type="number"
-    //     value={userId}
-    //     onChange={(e) => setUserId(e.target.value)}
-    //     style={{ marginBottom: "20px" }}
-    //   />
-
-    //   <br />
-
-    //   <Button
-    //     variant="contained"
-    //     color="primary"
-    //     onClick={getRecommendations}
-    //     style={{ marginBottom: "20px" }}
-    //   >
-    //     Get Recommendations
-    //   </Button>
-
-    //   {loading && <CircularProgress />}
-
-    //   {error && <Typography color="error">{error}</Typography>}
-
-    //   <Typography variant="h6">Recommended Products:</Typography>
-    //   <ul style={{ listStyleType: "none", padding: 0 }}>
-    //     {recommendations.length > 0
-    //       ? recommendations.map((product, index) => (
-    //           <li key={index} style={{ fontSize: "18px", marginTop: "5px" }}>
-    //             {product}
-    //           </li>
-    //         ))
-    //       : !loading && <Typography>No recommendations found.</Typography>}
-    //   </ul>
-    // </Container>
   );
 }
 
