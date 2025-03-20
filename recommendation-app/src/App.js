@@ -67,10 +67,8 @@ function App() {
       <Container
         style={{ textAlign: "center", marginTop: "50px" }}
         sx={{
-          minHeight: "100vh",
           backgroundColor: theme.palette.background.default,
           color: darkMode ? "#ffffff" : "#000000",
-          marginBottom: "50px",
         }}
       >
         <AppBar position="static">
