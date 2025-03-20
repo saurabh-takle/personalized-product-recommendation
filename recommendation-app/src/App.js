@@ -32,15 +32,14 @@ function App() {
         main: darkMode ? "#f48fb1" : "#d32f2f", // Pink in dark mode, Red in light mode
       },
       background: {
-        default: darkMode ? "#121212" : "#f4f4f4", // Dark Gray in Dark Mode, Light Gray in Light Mode
+        default: darkMode ? "#000" : "#fff", // Dark Gray in Dark Mode, Light Gray in Light Mode
       },
     },
   });
 
   useEffect(() => {
-      document.body.className = darkMode ? "dark-mode" : "light-mode";
+    document.body.className = darkMode ? "dark-mode" : "light-mode";
   }, [darkMode]);
-
 
   const getRecommendations = async () => {
     if (!userId) {
@@ -71,7 +70,13 @@ function App() {
           color: darkMode ? "#ffffff" : "#000000",
         }}
       >
-        <AppBar position="static">
+        <AppBar
+          position="static"
+          sx={{
+            backgroundColor: darkMode ? "#90caf9" : "#1976d2",
+            color: darkMode ? "#000" : "#fff",
+          }}
+        >
           <Toolbar>
             <Typography variant="h6" style={{ flexGrow: 1 }}>
               Product Recommendation System
@@ -80,6 +85,9 @@ function App() {
               {darkMode ? <Brightness7 /> : <Brightness4 />}
             </IconButton>
             <Switch
+              sx={{
+                color: darkMode ? "#fff" : "#fff",
+              }}
               checked={darkMode}
               onChange={() => setDarkMode(!darkMode)}
             />
@@ -122,7 +130,6 @@ function App() {
         >
           Get Recommendations
         </Button>
-
 
         {loading && <CircularProgress color="secondary" />}
 
