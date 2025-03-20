@@ -3,3 +3,4 @@ pandas
 scikit-surprise
 flask-cors
 gunicorn
+numpy<2.0
