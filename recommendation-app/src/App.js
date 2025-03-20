@@ -131,7 +131,7 @@ function App() {
           Get Recommendations
         </Button>
 
-        {loading && <CircularProgress color="secondary" />}
+        {loading && <CircularProgress color="primary" />}
 
         {error && <Typography color="error">{error}</Typography>}
 
