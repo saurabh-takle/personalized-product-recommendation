@@ -63,6 +63,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <title>recommendation-app</title>
       <Container
         style={{ textAlign: "center", marginTop: "50px" }}
         sx={{
